@@ -1,5 +1,5 @@
 api:
-  image: abprk/flask-apache:thirdbuild
+  image: abprk/flask-apache:latest
   ports:
     - "81:80"
     - "8027:22"
@@ -12,7 +12,7 @@ api:
     - webapp
     - db
 webapp:
-  image: abprk/reactjs-apache:secondbuild
+  image: abprk/reactjs-apache:latest
   ports:
     - "82:80"
     - "8028:22"

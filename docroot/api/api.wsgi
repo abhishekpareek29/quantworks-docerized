@@ -1,5 +1,5 @@
-#! /usr/bin/python3.5
+#! /usr/bin/python3
 
 import sys
-sys.path.append('/var/www/Quantworks/api/')
+sys.path.append('/var/www/html/api/')
 from api import app as application
