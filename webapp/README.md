@@ -17,6 +17,22 @@
  - All the logs are saved into this directory.
 
 ## How to use
+### Build Docker Image
+docker build -t flask-apache .
+docker tag 3640233b68d7 abprk/flask-apache:latest
+docker push abprk/flask-apache:latest
+
+### Docker Operations
+docker images
+docker container ls
+docker container stop 21742178318
+docker container prune
+docker rm 21742178318
+docker rmi 27389262719
+docker-compose up -d
+docker exec -it webapp_api_1 bin/bash
+
+
 
 ### Docroot
  - There is a directory called docroot in the repo, put your code inside that directory.

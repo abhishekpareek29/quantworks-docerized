@@ -1,5 +1,5 @@
-#! /usr/bin/python3
+#! /usr/bin/python3.5
 
 import sys
-sys.path.append('/var/www/html/api/')
+sys.path.append('/var/www/html/')
 from api import app as application

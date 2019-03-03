@@ -4,7 +4,7 @@ import { Bar, defaults } from 'react-chartjs-2';
 import MakeEntry from "./MakeEntry.js";
 
 // const API = 'http://api.quantworks.lc/api/v1/user-details';
-const API = 'http://api.quantworks.lc';
+const API = 'http://api.quantworks.lc:81';
 defaults.global.maintainAspectRatio = false;
 
 class App extends Component {

@@ -9,6 +9,7 @@ RUN apt-get -y install apache2
 RUN apt-get -y install apache2-dev
 RUN apt-get -y install vim
 RUN apt-get -y install libapache2-mod-wsgi-py3
+RUN apt-get -y install mysql-client
 
 RUN apt-get update \
   && apt-get install -y python3-pip python3-dev \
@@ -19,6 +20,7 @@ RUN apt-get update \
 RUN pip install uwsgi
 RUN pip install flask
 RUN pip install flask-restful
+RUN pip install Flask-API
 RUN pip install Flask-Cors
 RUN pip install flask-mysql
 RUN pip install mod_wsgi
