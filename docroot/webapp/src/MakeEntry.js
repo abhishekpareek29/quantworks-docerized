@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-// import { Link } from 'react-router';
 
 
 class MakeEntry extends React.Component {
@@ -32,7 +31,26 @@ class MakeEntry extends React.Component {
         "Content-Type": "application/json"
       }
     };
-    fetch(this.props.endpoint, conf);
+    fetch(this.props.API + this.props.endpoint, conf);
+
+    fetch(this.props.API + this.props.path, {
+      method: 'get',
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(function(response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    })
+    .then(data =>
+      this.props.state.setState({
+        female: data.items[0].Female,
+        male: data.items[1].Male,
+      })
+    );
   }
 
   render() {

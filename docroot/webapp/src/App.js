@@ -3,8 +3,9 @@ import './App.css';
 import { Bar, defaults } from 'react-chartjs-2';
 import MakeEntry from "./MakeEntry.js";
 
-// const API = 'http://api.quantworks.lc/api/v1/user-details';
 const API = 'http://api.quantworks.lc:81';
+const path = '/api/v1/gender-dist';
+const endpoint = '/api/v1/store-details';
 defaults.global.maintainAspectRatio = false;
 
 class App extends Component {
@@ -18,7 +19,6 @@ class App extends Component {
   }
 
   getGenderData(){
-    const path = '/api/v1/gender-dist';
     fetch(API + path, {
       method: 'get',
       headers: {
@@ -51,8 +51,8 @@ class App extends Component {
         {
           label: 'Gender Distribution',
           data: [female, male],
-          fill: 'green',
-          borderColor: 'green'
+          fillColor: "rgba(220,220,220,0.5)",
+          borderColor: 'green',
         }
       ]
     }
@@ -67,11 +67,12 @@ class App extends Component {
             width={50}
             height={50}
             options={{
-              maintainAspectRatio: false
+              maintainAspectRatio: false,
+              scaleBeginAtZero : true,
             }}
         />
 
-        <MakeEntry endpoint={API + "/api/v1/store-details"}/>
+        <MakeEntry state={this} path={path} API={API} endpoint={endpoint}/>
       </div>
     );
   }
